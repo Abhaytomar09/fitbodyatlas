@@ -227,7 +227,7 @@ npm start
 
 - Email: info@fitbodyatlas.com
 - Phone: +91 1234 567 890
-- Website: https://fitbodyatlas.com
+- Website:[ https://fitbodyatlas.com](https://fitbodyatlas.abhaytomar.com/)
 - Contact form: https://fitbodyatlas.com/contact
 
 ## 📄 License
