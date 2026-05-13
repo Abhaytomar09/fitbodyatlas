@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Block admin/API routes
+Disallow: /api/
+Disallow: /_next/
+
+# ── AI Crawler Directives (AEO) ──────────────────────────────────────
+# Allow Google AI (Gemini) to crawl for AI-powered answers
+User-agent: Google-Extended
+Allow: /
+
+# Allow OpenAI's GPTBot for ChatGPT knowledge
+User-agent: GPTBot
+Allow: /
+
+# Allow Anthropic's Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Allow Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Sitemap location
+Sitemap: https://fitbodyatlas.com/sitemap.xml
