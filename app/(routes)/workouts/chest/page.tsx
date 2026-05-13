@@ -67,6 +67,7 @@ export default function ChestWorkoutsPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-gray-800 text-white">
+                      <th className="border p-3 text-left">Image</th>
                       <th className="border p-3 text-left">Exercise</th>
                       <th className="border p-3 text-center">Sets</th>
                       <th className="border p-3 text-center">Reps</th>
@@ -75,24 +76,36 @@ export default function ChestWorkoutsPage() {
                   </thead>
                   <tbody>
                     <tr className="border">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=150" alt="Dumbbell Bench Press" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Dumbbell Bench Press</td>
                       <td className="border p-3 text-center">3</td>
                       <td className="border p-3 text-center">8-12</td>
                       <td className="border p-3 text-center">90s</td>
                     </tr>
                     <tr className="border bg-gray-50">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=150" alt="Incline Dumbbell Press" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Incline Dumbbell Press</td>
                       <td className="border p-3 text-center">3</td>
                       <td className="border p-3 text-center">8-10</td>
                       <td className="border p-3 text-center">90s</td>
                     </tr>
                     <tr className="border">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=150" alt="Dumbbell Flyes" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Dumbbell Flyes</td>
                       <td className="border p-3 text-center">3</td>
                       <td className="border p-3 text-center">12-15</td>
                       <td className="border p-3 text-center">60s</td>
                     </tr>
                     <tr className="border bg-gray-50">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&q=80&w=150" alt="Push-ups" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Push-ups</td>
                       <td className="border p-3 text-center">3</td>
                       <td className="border p-3 text-center">10-15</td>

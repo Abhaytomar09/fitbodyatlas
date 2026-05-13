@@ -6,18 +6,18 @@ import { ArrowRight, Search, Filter, Dumbbell } from "lucide-react";
 import { useState } from "react";
 
 const EXERCISES = [
-  { id: "bench-press", name: "Dumbbell Bench Press", category: "chest", difficulty: "beginner", muscleGroups: "Chest, Triceps, Shoulders" },
-  { id: "squat", name: "Barbell Back Squat", category: "legs", difficulty: "intermediate", muscleGroups: "Quads, Glutes, Hamstrings" },
-  { id: "deadlift", name: "Conventional Deadlift", category: "back", difficulty: "intermediate", muscleGroups: "Back, Glutes, Hamstrings" },
-  { id: "pushups", name: "Push-ups", category: "chest", difficulty: "beginner", muscleGroups: "Chest, Triceps, Shoulders" },
-  { id: "pull-ups", name: "Pull-ups", category: "back", difficulty: "intermediate", muscleGroups: "Lats, Back, Biceps" },
-  { id: "lateral-raise", name: "Lateral Raise", category: "shoulders", difficulty: "beginner", muscleGroups: "Shoulders" },
-  { id: "bicep-curl", name: "Dumbbell Bicep Curl", category: "arms", difficulty: "beginner", muscleGroups: "Biceps, Forearms" },
-  { id: "tricep-pushdown", name: "Cable Tricep Pushdown", category: "arms", difficulty: "beginner", muscleGroups: "Triceps" },
-  { id: "leg-press", name: "Leg Press Machine", category: "legs", difficulty: "beginner", muscleGroups: "Quads, Glutes" },
-  { id: "plank", name: "Plank", category: "abs", difficulty: "beginner", muscleGroups: "Core, Abs, Lower Back" },
-  { id: "overhead-press", name: "Barbell Overhead Press", category: "shoulders", difficulty: "intermediate", muscleGroups: "Shoulders, Triceps" },
-  { id: "cable-row", name: "Seated Cable Row", category: "back", difficulty: "beginner", muscleGroups: "Lats, Rhomboids, Biceps" },
+  { id: "bench-press", name: "Dumbbell Bench Press", category: "chest", difficulty: "beginner", muscleGroups: "Chest, Triceps, Shoulders", image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=600" },
+  { id: "squat", name: "Barbell Back Squat", category: "legs", difficulty: "intermediate", muscleGroups: "Quads, Glutes, Hamstrings", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" },
+  { id: "deadlift", name: "Conventional Deadlift", category: "back", difficulty: "intermediate", muscleGroups: "Back, Glutes, Hamstrings", image: "https://images.unsplash.com/photo-1603287681836-b174ce5074c2?auto=format&fit=crop&q=80&w=600" },
+  { id: "pushups", name: "Push-ups", category: "chest", difficulty: "beginner", muscleGroups: "Chest, Triceps, Shoulders", image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=600" },
+  { id: "pull-ups", name: "Pull-ups", category: "back", difficulty: "intermediate", muscleGroups: "Lats, Back, Biceps", image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&q=80&w=600" },
+  { id: "lateral-raise", name: "Lateral Raise", category: "shoulders", difficulty: "beginner", muscleGroups: "Shoulders", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=600" },
+  { id: "bicep-curl", name: "Dumbbell Bicep Curl", category: "arms", difficulty: "beginner", muscleGroups: "Biceps, Forearms", image: "https://images.unsplash.com/photo-1581009137042-c552e485697a?auto=format&fit=crop&q=80&w=600" },
+  { id: "tricep-pushdown", name: "Cable Tricep Pushdown", category: "arms", difficulty: "beginner", muscleGroups: "Triceps", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" },
+  { id: "leg-press", name: "Leg Press Machine", category: "legs", difficulty: "beginner", muscleGroups: "Quads, Glutes", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" },
+  { id: "plank", name: "Plank", category: "abs", difficulty: "beginner", muscleGroups: "Core, Abs, Lower Back", image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=600" },
+  { id: "overhead-press", name: "Barbell Overhead Press", category: "shoulders", difficulty: "intermediate", muscleGroups: "Shoulders, Triceps", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=600" },
+  { id: "cable-row", name: "Seated Cable Row", category: "back", difficulty: "beginner", muscleGroups: "Lats, Rhomboids, Biceps", image: "https://images.unsplash.com/photo-1603287681836-b174ce5074c2?auto=format&fit=crop&q=80&w=600" },
 ];
 
 const CATEGORIES = ["all", "chest", "back", "legs", "shoulders", "arms", "abs"];
@@ -146,11 +146,18 @@ export function ExercisesContent() {
                         }}
                       >
                         {/* Exercise thumbnail */}
-                        <div
-                          className="w-full h-36 flex items-center justify-center"
-                          style={{ background: "linear-gradient(135deg, #1B2A4A, #243B55)" }}
-                        >
-                          <Dumbbell size={36} style={{ color: "rgba(255,107,53,0.6)" }} />
+                        <div className="w-full h-44 relative overflow-hidden bg-gray-900">
+                          {ex.image ? (
+                            <img
+                              src={ex.image}
+                              alt={ex.name}
+                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1B2A4A, #243B55)" }}>
+                              <Dumbbell size={36} style={{ color: "rgba(255,107,53,0.6)" }} />
+                            </div>
+                          )}
                         </div>
 
                         <div className="p-4">

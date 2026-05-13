@@ -32,6 +32,7 @@ export default function BackWorkoutsPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-blue-800 text-white">
+                      <th className="border p-3 text-left">Image</th>
                       <th className="border p-3 text-left">Exercise</th>
                       <th className="border p-3 text-center">Sets</th>
                       <th className="border p-3 text-center">Reps</th>
@@ -39,16 +40,25 @@ export default function BackWorkoutsPage() {
                   </thead>
                   <tbody>
                     <tr className="border">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&q=80&w=150" alt="Pull-ups" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Pull-ups</td>
                       <td className="border p-3 text-center">4</td>
                       <td className="border p-3 text-center">8-12</td>
                     </tr>
                     <tr className="border bg-gray-50">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1603287681836-b174ce5074c2?auto=format&fit=crop&q=80&w=150" alt="Lat Pulldown" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Lat Pulldown</td>
                       <td className="border p-3 text-center">3</td>
                       <td className="border p-3 text-center">10-12</td>
                     </tr>
                     <tr className="border">
+                      <td className="border p-3">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=150" alt="Bent Over Rows" className="w-20 h-16 object-cover rounded-md" />
+                      </td>
                       <td className="border p-3 font-semibold">Bent Over Rows</td>
                       <td className="border p-3 text-center">4</td>
                       <td className="border p-3 text-center">6-8</td>

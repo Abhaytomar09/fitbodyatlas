@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -173,6 +174,7 @@ export default function RootLayout({
     <html
       lang="en-IN"
       className={`${inter.variable} ${outfit.variable} h-full`}
+      suppressHydrationWarning
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -198,8 +200,22 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
         />
+        
+        {/* Google Analytics */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-YHC2KXE5SG" 
+          strategy="afterInteractive" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YHC2KXE5SG');
+          `}
+        </Script>
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
